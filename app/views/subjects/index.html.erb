@@ -1,0 +1,25 @@
+<div>
+  <%= render partial: "layouts/header" %>
+</div>
+
+<p> </p>
+<h1 class="current-category"><%= params[:semester]%></h1>
+
+    <% if @subjects.count == 0 %>
+      <h2>Não há disciplinas cadastradas para esse semestre!</h2>
+    <% else %>
+
+    <div class="row">
+            <% @subjects.each do |subject| %>
+              <p> </p>
+                <div class="col-md-3">
+                  <a href="/subjects/<%= subject.id %>">
+                     <%= image_tag subject.subject_img.url(:subject_index)%>
+                  </a>
+                </div>
+            <% end %>
+    </div>
+
+<% end %>
+
+
