@@ -2,16 +2,18 @@
 
 
     <% if @subject.semester_id? %>
+        <br/>
         <h4>Semestre anterior: <%= @subject.semester.semester %></h4>
         <p></p>
     <% else %>
+        <br/>
         <h4>Semestre anterior: Não definido</h4>
         <p></p>
     <% end %>
 
 
     <%= select_tag(:semester_id, options_for_select(@semesters), :prompt => "Selecione um semestre")%>
-    <p></p>
+    <br/></br>
 
     <%= f.input :name, label: "Nome" %>
 		<%= f.input :professor, label: "Professor" %>

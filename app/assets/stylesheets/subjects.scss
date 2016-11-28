@@ -1,9 +1,8 @@
 // Place all the styles related to the Subjects controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-mixin background-tile2 {
+@mixin background-tile2 {
   box-sizing: border-box;
-  background-color: transparent;
   border-radius: 5px;
   padding: 1.5em 1.25em;
   box-shadow: 3px 3px 5px 6px #ccc;
@@ -21,6 +20,12 @@ body{
 
 }
 
+.titulos{
+  display: block;
+  margin-top: 30px;
+  font-style: bold;
+}
+
 
 .img-center{
   margin: 0 auto;
@@ -29,13 +34,38 @@ body{
   width: 900px;
 }
 
-.box-subject{
-  margin: 0 auto;
-  margin-top: 60px;
-  float: none;
-  width: 900px;
+.subjects-details {
+  margin-top: 100px;
+  width: 800px;
+  margin-top: 70px;
+  margin-outside: 30px;
+  background-color: transparent;
 }
 
+.box-subject{
+  height: 100px;
+  width: 300px;
+  margin-top: 25px;
+  margin-left: -10px;
+  background-color: #333;
+  border: solid;
+  border-radius: 5px;
+  border-color: #fff;
+  border-width: 5px;
+  box-shadow: 5px 5px 5px 5px #ccc;
+}
+
+.box-subject:hover{
+  background-color: #900;
+  transform: scale(1.04);
+}
+
+.box-table{
+  background-color: white;
+  width: 1000px;
+  box-shadow: 5px 5px 5px 5px #ccc;
+
+}
 
 .form-control:focus{
   border-color: #9CF;
@@ -59,6 +89,12 @@ body{
   color: #000000;
 }
 
+.texto-rodape{
+  margin-top: 400px;
+  text-align: center;
+  color: #333;
+}
+
 .btn-info{
   background-color: #036 !important;
   border-color: #036 !important;
@@ -71,3 +107,6 @@ body{
   font-color: #000000;
 
 }
+
+
+
