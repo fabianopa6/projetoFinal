@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161126030340) do
+ActiveRecord::Schema.define(version: 20161128050104) do
 
   create_table "semesters", force: :cascade do |t|
     t.string   "semester"
@@ -30,6 +30,17 @@ ActiveRecord::Schema.define(version: 20161126030340) do
     t.string   "subject_img_content_type"
     t.integer  "subject_img_file_size"
     t.datetime "subject_img_updated_at"
+  end
+
+  create_table "tasks", force: :cascade do |t|
+    t.text     "description"
+    t.integer  "score"
+    t.integer  "rating"
+    t.text     "prof_answer"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "user_id"
+    t.integer  "subject_id"
   end
 
   create_table "users", force: :cascade do |t|

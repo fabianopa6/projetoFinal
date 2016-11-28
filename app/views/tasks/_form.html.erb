@@ -1,0 +1,8 @@
+<%= simple_form_for([@subject, @subject.tasks.build]) do |f|  %>
+  <%= f.input :description, label: "Descrição:"%>
+  <%= f.input :score, label: "Pontuação:" %>
+  <%= f.input :rating %>
+  <%= f.input :prof_answer, label: "Possível Resposta:" %>
+  <%= f.button :submit %>
+
+<% end %>

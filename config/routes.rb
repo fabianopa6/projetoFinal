@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
 
   devise_for :users
-  resources :subjects
+  resources :subjects do
+    resources :tasks
+  end
 
   root 'subjects#index'
 
