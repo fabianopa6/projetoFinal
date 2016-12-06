@@ -1,17 +1,26 @@
 <div>
-  <%= render partial: "layouts/headerInsideScreen" %>
+  <%= render partial: "layouts/headerInsideSubject" %>
 </div>
 
 
 <div class="subjects-details">
-    <h2 class="titulos">Tarefas cadastradas em:  <%= @subject.name %></h2>
+    <h2 class="titulos"><%= @subject.name %></h2>
     <h4>Professor: <%= @subject.professor%></h4>
     <h4><%= @subject.semester.semester%></h4>
 
+  <div class="row">
 
+    <div class="col-md-12">
+      <div class="container">
 
-    <%= link_to "Pagina Inicial", root_path %>
-    <%= link_to "Editar Disciplina", edit_subject_path %>
-    <%= link_to "Excluir Disciplina", subject_path(@subject), method: :delete, data: { confirm: "Deseja deletar a Disciplina?"} %>
+      <%= render @subject.tasks %>
+
+    </div>
+  </div>
+
+  </div>
+
+</br>
+
 
 </div>

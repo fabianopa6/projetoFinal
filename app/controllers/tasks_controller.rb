@@ -12,7 +12,7 @@ class TasksController < ApplicationController
     @task.user_id = current_user.id
 
     if @task.save
-      redirect_to subjects_path(@subject)
+      redirect_to subject_path(@subject)
     else
       render 'new'
     end
@@ -23,7 +23,7 @@ class TasksController < ApplicationController
     private
 
     def task_params
-      params.require(:task).permit(:rating, :comment)
+      params.require(:task).permit(:description, :score, :rating, :prof_answer, :task_type)
     end
 
     def find_subject

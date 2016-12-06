@@ -1,7 +1,16 @@
-<%= simple_form_for([@subject, @subject.tasks.build]) do |f|  %>
-  <%= f.input :description, label: "Descrição:"%>
-  <%= f.input :score, label: "Pontuação:" %>
-  <%= f.input :rating %>
+<%= simple_form_for([@subject, @subject.tasks.build]) do |f| %>
+
+    <div class="task_form-style" <%= f.input :description, label: "Descrição:"%>
+    <%= radio_button_tag(:task_type, "Tipo de Tarefa")%>
+    <%= label_tag(:task_type, "Objetiva")%>
+    <%= radio_button_tag(:task_type, "Tipo de Tarefa")%>
+    <%= label_tag(:task_type, "Aberta")%>
+    <%= radio_button_tag(:task_type, "Tipo de Tarefa")%>
+    <%= label_tag(:task_type, "Codificação")%>
+
+
+    <div class="task_form-style"><%= f.input :score, label: "Pontuação:" %>
+    <%= f.input :rating, label: "Dificuldade:"  %></div>
   <%= f.input :prof_answer, label: "Possível Resposta:" %>
   <%= f.button :submit %>
 

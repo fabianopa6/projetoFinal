@@ -1,3 +1,52 @@
 // Place all the styles related to the Tasks controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@mixin background-tile2 {
+  box-sizing: border-box;
+  border-radius: 5px;
+  box-shadow: 3px 3px 5px 6px #ccc;
+}
+
+
+body{
+  background-color: #EEEEEE;
+  font-family: Lato, Ubuntu;
+}
+
+.navbar {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 16px;
+
+}
+
+.titulos{
+  display: block;
+  margin-top: 30px;
+  font-style: bold;
+}
+
+.box-tasks{
+  height: 50%;
+  width: 1100px;
+  margin-top: 25px;
+  margin-left: -10px;
+  background-color: #333;
+  border: solid;
+  border-radius: 5px;
+  border-color: #fff;
+  border-width: 5px;
+  box-shadow: 5px 5px 5px 5px #ccc;
+  font-family: Lato, Ubuntu;
+  font-size: 18px;
+  color: white;
+  @include background-tile2;
+}
+
+.box-tasks:hover{
+  background-color: #900;
+  transform: scale(1.03);
+}
+
+.task_form-style{
+}

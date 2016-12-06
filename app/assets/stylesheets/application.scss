@@ -26,10 +26,9 @@
 
 
 @mixin background-tile2 {
-	box-sizing: border-box;
-	background-color: transparent;
-	border-radius: 5px;
-	padding: 1.5em 1.25em;
+  box-sizing: border-box;
+  border-radius: 5px;
+  box-shadow: 3px 3px 5px 6px #ccc;
 }
 
 /* General styles */
@@ -53,6 +52,12 @@ p.alert, p.notice {
 	padding-top: 10px;
 	padding-bottom: 10px;
 	padding-left: 68px;
+}
+
+.titulos{
+  display: block;
+  margin-top: 30px;
+  font-style: bold;
 }
 
 /* Navbar/navigation styles */
@@ -97,18 +102,17 @@ p.alert, p.notice {
 
 
 	.dropdown-menu > li > a:hover {
-		background-color: darken(#f1c40f, 5%);
-		color: #fff;
+		background-color: darken(#036, 5%);
+		color: #FFF;
 	}
 
 	.navbar-nav > .open > a, .navbar-nav > .open > a:hover, .navbar-nav > .open > a:focus {
-		background-color: darken(#f1c40f, 5%);
-		color: #9CF;
+		background-color: darken(#036, 5%);
+		color: #FFF;
 
 	}
 
 }
-
 
 
 
@@ -118,6 +122,13 @@ p.alert, p.notice {
 
 }
 
+.form-control:focus{
+  border-color: #9CF;
+  border-style: solid;
+  border-radius: 10px;
+  box-shadow: 1px 0 0 0;
+  outline: 0;
+}
 
 /* Button/link styles */
 
