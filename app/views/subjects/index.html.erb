@@ -5,70 +5,83 @@
 
 		<% if @subjects.count == 0 %>
 		    <br/>
-        <br/>
+    <p></p>
+
 
     <div class="container">
-        <h1 class="current-category"><%= params[:semester]%></h1>
-        <h3>Não há disciplinas cadastradas para esse semestre!</h3>
+      <h2 class="titulos">Disciplinas ativas: <b><%= params[:semester]%></b></h2>
+      <h4><b>Não há disciplinas cadastradas para esse semestre!</b></h4>
     </div>
 
     <% else %>
 
       <br/>
-      <h2 class="titulos">Disciplinas ativas: </h2>
-        <div class="row">
+    <p></p>
+    <div class="container">
+      <h2 class="titulos">Disciplinas ativas: <b><%= params[:semester]%></b></h2>
+
                 <% @subjects.each do |subject| %>
                   <p> </p>
                     <div class="col-md-4">
-                        <div class="">
+
                           <a href="/subjects/<%= subject.id %>">
                             <%= image_tag subject.subject_img.url(:subject_index), class:"box-subject"%>
                           </a>
-                        </div>
+
                     </div>
                 <% end %>
         </div>
 <% end %>
 
+<br>
 
 <div class="container">
-  <br/>
   <h2 class="titulos">Pontuação Geral:</h2>
 
-  <div class="table-responsive">
-    <br/>
-    <div class="box-table">
 
+    <br/>
+  <div class="table-responsive">
       <table class="table">
-        <thead>
+        <thead class="thead-inverse">
         <tr>
-          <th>Firstname</th>
-          <th>Lastname</th>
-          <th>Email</th>
+          <th>Nome:</th>
+          <th>Matrícula:</th>
+          <th>Pontuação:</th>
+          <th>Média:</th>
         </tr>
         </thead>
         <tbody>
         <tr>
-          <td>John</td>
-          <td>Doe</td>
-          <td>john@example.com</td>
+        <td>Kennet Emerson</td>
+        <td>201350105</td>
+        <td>25 pontos</td>
+        <td>9,91</td>
         </tr>
         <tr>
-          <td>Mary</td>
-          <td>Moe</td>
-          <td>mary@example.com</td>
+          <td>Caetano Vieira</td>
+          <td>201310958</td>
+          <td>21 pontos</td>
+          <td>9,50</td>
         </tr>
         <tr>
-          <td>July</td>
-          <td>Dooley</td>
-          <td>july@example.com</td>
+          <td>Fabiano Alencar</td>
+          <td>201310340</td>
+          <td>15 pontos</td>
+          <td>8,75</td>
         </tr>
+        <tr>
+          <td>Jayara Medeiros</td>
+          <td>201313780</td>
+          <td>07 pontos</td>
+          <td>8,51</td>
+        </tr>
+
         </tbody>
       </table>
     </div>
-  </div>
 </div>
-
+<br>
+<br>
 <h5 align="center" class="texto-rodape">Sistemas de Informação - Faculdade Paraíso do Ceará</h5>
 
 

@@ -17,6 +17,27 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+html {
+  font-family: sans-serif;
+  line-height: 1.15;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+article,
+ aside,
+ details,
+ figcaption,
+ figure,
+ footer,
+ header,
+ main,
+ menu,
+ nav,
+ section,
+ summary {
+   display: block;
+ }
+
 @mixin background-tile {
 	box-sizing: border-box;
 	background-color: #fff;
@@ -36,6 +57,7 @@
 body {
 	background-color: #f5f5f5;
 	font-family: 'Lora', serif;
+  margin: 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -56,8 +78,11 @@ p.alert, p.notice {
 
 .titulos{
   display: block;
-  margin-top: 30px;
-  font-style: bold;
+  margin-top: 35px;
+  border-bottom: 2px solid gainsboro;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+
 }
 
 /* Navbar/navigation styles */
@@ -117,8 +142,8 @@ p.alert, p.notice {
 
 
 .dropdown-menu > .active > a {
-	background-color: #f1c40f;
-	color: #fff;
+	background-color: #9CF;
+	color: #000;
 
 }
 
@@ -132,17 +157,38 @@ p.alert, p.notice {
 
 /* Button/link styles */
 
+.table{
+  width: 1100px;
+  height: auto;
+  padding-bottom: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 15px;
+  background-color: white;
+  border: solid;
+  border-radius: 5px;
+  border-color: lightgray;
+  border-width: 2px;
+  box-shadow: 3px 3px 3px 3px #ccc;
+}
+
+.box-table-inside{
+  width: auto;
+  height: auto;
+}
 .btn-custom {
-	color: darken(#f1c40f, 5%);
+    height: auto;
+	color: #333;
 	background-color: #fff;
-	border: 1px solid darken(#f1c40f, 5%);
-	padding: 8px 20px;
+	border: 1px solid #222;
+	padding: 5px 10px;
 	border-radius: 5px;
 	font-family: 'Ubuntu', sans-serif;
+  font-size: 14px;
 	&:hover {
 		text-decoration: none;
-		background-color: darken(#f1c40f, 5%);
-		color: #fff;
+		background-color: #9CF;
+		color: #000;
 		transition: 0.5s;
 	}
 }
@@ -154,6 +200,7 @@ p.alert, p.notice {
 	padding: 8px 20px;
 	border-radius: 5px;
 	font-family: 'Ubuntu', sans-serif;
+    font-size: 16px;
 	&:hover {
 		text-decoration: none;
 		background-color: #333;
@@ -242,101 +289,20 @@ p.alert, p.notice {
 
 /* current-category styles */
 
-.current-category {
-	margin-bottom: 40px;
-}
-
 
 /* Reviews styles */
 
-.reviews {
-
-	@include background-tile;
-	margin-top: 40px;
-
-	h1 {
-		margin-top: 0;
-		margin-bottom: 15px;
-		font-size: 2em;
-	}
-
-	.review {
-		border-bottom: 1px solid gainsboro;
-		margin-bottom: 15px;
-		padding-bottom: 10px;
-
-		.review-comment {
-			font-size: 1.05em;
-			line-height: 1.5;
-		}
-
-	}
-
-	.new-review {
-		padding-top: 8px;
-	}
-
-}
 
 /* New Book Form styles */
 
-.new-book-form {
-	@include background-tile;
 
-	h1 {
-		margin-top: 0;
-	}
-
-	#category_id {
-		margin-bottom: 10px;
-	}
-
-	#book_book_img {
-		margin-bottom: 10px;
-	}
-
-}
 
 
 /* Edit Book Form styles */
 
-.edit-book-form {
-
-	@include background-tile;
-
-	h1 {
-		margin-top: 0;
-	}
-
-	#book_category_id {
-		margin-bottom: 10px;
-	}
-
-	#book_book_img {
-		margin-bottom: 10px;
-	}
-
-}
 
 /* New/Edit review form styles */
 
-.new-review-form, .edit-review-form {
-	@include background-tile;
-
-	h1 {
-		margin-top: 0;
-	}
-
-	#rating-form {
-		margin-bottom: 15px;
-
-		label {
-			display: block;
-		}
-
-	}
-
-}
 
 
 /* Signup/Login form styles */

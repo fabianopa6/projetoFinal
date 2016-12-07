@@ -4,22 +4,25 @@
 
 <p> </p>
 
-<div class="box-cadastro">
-<h2 align="center">Cadastre-se</h2>
+<div class="col-md-6 col-md-offset-3">
+  <div class="subjects-details">
+  <h2 align="center">Cadastre-se</h2>
 
-  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-    <%= f.error_notification %>
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= f.error_notification %>
 
-    <div class="form-inputs">
-      <%= f.input :name, required: true, autofocus: true, label: "Nome:" %>
-      <%= f.input :login, required: true, label: "Matrícula:" %>
-      <%= f.input :password, required: true, hint: ("#{@minimum_password_length} caracteres mínimos" if @minimum_password_length), label: "Senha:" %>
-      <%= f.input :password_confirmation, required: true , label: "Confirmação de Senha:" %>
-    </div>
+      <div class="form-inputs">
+        <%= f.input :name, required: true, autofocus: true, label: "Nome:" %>
+        <%= f.input :login, required: true, label: "Matrícula:" %>
+        <%= f.input :password, required: true, hint: ("#{@minimum_password_length} caracteres mínimos" if @minimum_password_length), label: "Senha:" %>
+        <%= f.input :password_confirmation, required: true , label: "Confirmação de Senha:" %>
+      </div>
 
-    <div class="form-actions" align="right">
-      <%= f.button :submit, "Cadastrar", class:"btn-info" %>
-    </div>
-  <% end %>
+      <div class="form-actions" align="right">
+        <%= f.button :submit, "Cadastrar", class:"btn btn-custom2" %>
+      </div>
+    <% end %>
+
+  </div>
 
 </div>

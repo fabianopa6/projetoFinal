@@ -3,7 +3,7 @@
 
     <% if @subject.semester_id? %>
         <br/>
-        <h4>Semestre anterior: <%= @subject.semester.semester %></h4>
+        <h4><b>Semestre anterior: </b><%= @subject.semester.semester %></h4>
         <p></p>
     <% else %>
         <br/>
@@ -18,6 +18,8 @@
     <%= f.input :name, label: "Nome" %>
 		<%= f.input :professor, label: "Professor" %>
     <%= f.file_field :subject_img %>
-    <p></p>
-	<%= f.button :submit %>
+    <br>
+	<%= f.button :submit, class:"btn btn-custom2", value:"Cadastrar"%>
+    -  |  -
+    <%= link_to "Cancelar", root_path, class:"btn btn-custom2" %>
 <% end %>

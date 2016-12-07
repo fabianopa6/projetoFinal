@@ -1,0 +1,43 @@
+<div>
+  <%= render partial: "layouts/headerInsideTasks" %>
+</div>
+
+<div class="subjects-details">
+
+    <h1 class="titulos">Editar Tarefa</h1>
+
+    <%= simple_form_for([@subject, @task]) do |f| %>
+
+
+        <%= f.input :description, label: "Descrição:"%>
+        <label>Selecione o tipo da tarefa:</label>
+        <%= radio_button_tag(:task_type, "Tipo de Tarefa")%>
+        <%= label_tag(:task_type, "Objetiva")%>
+        <%= radio_button_tag(:task_type, "Tipo de Tarefa")%>
+        <%= label_tag(:task_type, "Aberta")%>
+        <%= radio_button_tag(:task_type, "Tipo de Tarefa")%>
+        <%= label_tag(:task_type, "Codificação")%>
+        <p></p>
+
+
+        <%= f.input :score, label: "Pontuação:" %>
+
+        <%= f.input :rating, label: "Dificuldade:"%>
+        <p></p>
+
+        <%= f.input :prof_answer, label: "Possível Resposta:" %>
+        <%= f.button :submit, class:"btn btn-custom2", value: "Salvar" %>
+        -  |  -
+        <%= link_to "Cancelar", root_path, class:"btn btn-custom2" %>
+
+
+    <% end %>
+</div>
+
+
+<script>
+    $('#rating-form').raty({
+        path: '/assets/',
+        scoreName: 'review[rating]'
+    });
+</script>

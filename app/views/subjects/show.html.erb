@@ -4,18 +4,15 @@
 
 
 <div class="subjects-details">
-    <h2 class="titulos"><%= @subject.name %></h2>
-    <h4>Professor: <%= @subject.professor%></h4>
+    <h2 class="titulos"><b>Lista de Exercícios: </b><%= @subject.name %></h2>
+    <h4><b>Professor: </b><%= @subject.professor%></h4>
     <h4><%= @subject.semester.semester%></h4>
 
   <div class="row">
-
-    <div class="col-md-12">
       <div class="container">
 
-      <%= render @subject.tasks %>
+      <%= render @subject.tasks.order("created_at DESC")%>
 
-    </div>
   </div>
 
   </div>
@@ -24,3 +21,15 @@
 
 
 </div>
+
+
+
+<script>
+    $('.review-rating').raty({
+        readOnly: true,
+        score: function(){
+            return $(this).attr('data-score');
+        },
+        path:'/assets/'
+    });
+</script>

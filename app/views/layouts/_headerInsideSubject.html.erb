@@ -11,11 +11,22 @@
       <b><%= link_to "CodeFAP", root_path, class: "navbar-brand"%></b>
     </div>
 
-    <div class="col-md-6 col-md-offset-1">
+    <div class="col-md-5 col-md-offset-1">
       <ul class="nav navbar-nav">
         <% if user_signed_in? %>
-            <li><%= link_to "Nova Tarefa", new_subject_task_path(@subject) %></li>
+            <% if current_user.id == 1 %>
+              <li><%= link_to "Nova Tarefa", new_subject_task_path(@subject) %></li>
+            <% end %>
 
+                <% if @subject.user_id == current_user.id %>
+                    <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">+ Opções
+                        <span class="caret"></span></a>
+                      <ul class="dropdown-menu" role="menu">
+                        <li><%= link_to "Excluir Disciplina", subject_path(@subject), method: :delete, data: { confirm: "Deseja deletar a Disciplina?"} %></li>
+                        <li><%= link_to "Editar Disciplina", edit_subject_path %></li>
+                      </ul>
+                    </li>
         <% end %>
       </ul>
     </div>
@@ -25,10 +36,20 @@
     <ul class="nav navbar-nav navbar-right">
 
 
-      <% if user_signed_in? %>
-          <li><%= link_to "Excluir |", subject_path(@subject), method: :delete, data: { confirm: "Deseja deletar a Disciplina?"} %></li>
-          <li><%= link_to "Editar Disciplina", edit_subject_path %></li>
-          <li><%= link_to "|  Sair", destroy_user_session_path, method: :delete %></li>
+
+
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><%= current_user.name %>
+              <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><%= link_to "  Desempenho", root_path %></li>
+              <li><%= link_to "  Perfil", root_path %></li>
+              <li><%= link_to "  Configurações", root_path %></li>
+              <li><%= link_to "  Sair", destroy_user_session_path, method: :delete%></li>
+            </ul>
+          </li>
+
+
       <% else %>
           <li><%= link_to "Entrar  |", new_user_session_path %></li>
           <li><%= link_to "Cadastre-se", new_user_registration_path %></li>

@@ -19,12 +19,6 @@ body{
 
 }
 
-.titulos{
-  display: block;
-  margin-top: 30px;
-  font-style: bold;
-}
-
 
 .img-center{
   margin: 0 auto;
@@ -34,11 +28,19 @@ body{
 }
 
 .subjects-details {
-  margin-top: 100px;
-  width: 800px;
+  width: auto;
   margin-top: 70px;
-  margin-outside: 30px;
-  background-color: transparent;
+  background-color: white;
+  border-color: #fff;
+  border-width: 5px;
+  box-shadow: 3px 3px 3px 3px #ccc;
+  padding-top: 1px;
+  border-radius: 10px;
+  padding-right: 45px;
+  padding-bottom: 15px;
+  padding-left: 45px;
+  margin-bottom: 50px;
+
 }
 
 .box-subject{
@@ -57,13 +59,6 @@ body{
 .box-subject:hover{
   background-color: #900;
   transform: scale(1.04);
-}
-
-.box-table{
-  background-color: white;
-  width: 1000px;
-  box-shadow: 5px 5px 5px 5px #ccc;
-
 }
 
 .form-control:focus{
@@ -89,7 +84,7 @@ body{
 }
 
 .texto-rodape{
-  margin-top: 400px;
+  margin-bottom: 20px;
   text-align: center;
   color: #333;
 }
