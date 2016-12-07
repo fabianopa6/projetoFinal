@@ -85,6 +85,27 @@ p.alert, p.notice {
 
 }
 
+.score-style {
+  margin-top: -53px;
+  margin-right: 5px;
+
+}
+
+.hard-style {
+  margin-top: -37px;
+  margin-right: 5px;
+  margin-left: 750px;
+
+}
+
+ .answer{
+  display: block;
+  margin-top: 15px;
+  border-bottom: 1px solid gainsboro;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+
+}
 /* Navbar/navigation styles */
 
 .navbar {
@@ -209,6 +230,57 @@ p.alert, p.notice {
 	}	
 }
 
+.btn-customok {
+  height: auto;
+  color: #333;
+  background-color: #fff;
+  border: 1px solid #222;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 14px;
+  &:hover {
+    text-decoration: none;
+    background-color: green;
+    color: #fff;
+    transition: 0.5s;
+  }
+}
+
+.btn-customerror {
+  height: auto;
+  color: #333;
+  background-color: #fff;
+  border: 1px solid #222;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 14px;
+  &:hover {
+    text-decoration: none;
+    background-color: #900;
+    color: #fff;
+    transition: 0.5s;
+  }
+}
+
+.answers-details {
+  width: auto;
+  margin-top: 40px;
+  background-color: white;
+  border-color: #fff;
+  border-width: 5px;
+  box-shadow: 3px 3px 3px 3px #ccc;
+  padding-top: 1px;
+  border-radius: 10px;
+  padding-right: 45px;
+  padding-bottom: 15px;
+  padding-left: 45px;
+  margin-bottom: 50px;
+
+
+}
+
 .links {
 
 	.btn-custom {
@@ -237,6 +309,7 @@ p.alert, p.notice {
 	@include background-tile2;
 
 }
+
 
 
 /* Book styles */
@@ -285,6 +358,9 @@ p.alert, p.notice {
 	}
 
 }
+
+
+
 
 
 /* current-category styles */

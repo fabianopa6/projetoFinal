@@ -1,0 +1,10 @@
+<%= simple_form_for @answer, :html => { :multipart => true } do |f| %>
+
+    <%= f.input :task_answer, label: "Digite sua Resposta:" %>
+
+    <% if current_user.id != 1 %>
+      <%= f.button :submit, value: "Submeter Resposta", class:"btn btn-custom2" %>
+        -  |  -
+        <%= link_to "Cancelar", root_path, class:"btn btn-custom2" %>
+    <% end %>
+<% end %>

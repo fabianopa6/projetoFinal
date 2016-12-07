@@ -2,7 +2,7 @@ class SubjectsController < ApplicationController
 
 	#before_ACTION são ações realizadas pre carregamento de qualquer função do controller
 	before_action :find_subject, only: [:show, :edit, :update, :destroy]
-	before_action :authenticate_user!, only: [:new, :edit, :show]
+	before_action :authenticate_user!, only: [:new, :edit, :show, :index]
 
 	def index
 		if params[:semester].blank?

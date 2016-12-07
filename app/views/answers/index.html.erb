@@ -1,0 +1,30 @@
+
+<div>
+  <%= render partial: "layouts/headerInsideTasks" %>
+</div>
+
+<br>
+<p></p>
+<br>
+
+  <h2 class="titulos"><b>Respostas Submetidas:</b></h2>
+
+<div class="answers-details">
+
+
+    <% @answers.each do |answer| %>
+      <h4><%= answer.user_id %></h4>
+      <h4 class="answer"><%= answer.task_answer%></h4>
+
+      <% if user_signed_in? %>
+          <% if current_user.id == 1%>
+              <%= link_to "Correto", root_path, class:"btn btn-customok" %>
+              -  |  -
+              <%= link_to "Errado", root_path, class:"btn btn-customerror" %>
+          <% end %>
+      <% end %>
+
+    <% end %>
+
+
+</div>

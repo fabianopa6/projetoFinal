@@ -1,6 +1,12 @@
 <div class="box-tasks">
   <div class="box-tasks-inside">
-      <%= link_to task.description, edit_subject_task_path(task.subject, task), class:"link-to-answer-task"%>
+    <% if user_signed_in? %>
+        <% if current_user.id == 1%>
+          <%= link_to task.description, answer_path(task.subject, task), class:"link-to-answer-task"%>
+            <% else %>
+            <%= link_to task.description, new_answer_path, class:"link-to-answer-task"%>
+        <% end %>
+    <% end %>
   </div>
 </div>
 
@@ -12,12 +18,26 @@
           - | -
         <%= link_to "  Excluir", subject_task_path(task.subject, task), method: :delete, data: { confirm: "Deseja excluir tarefa?"},  class:"btn btn-custom"  %>
       <% else %>
-          <%= link_to "Resolver Tarefa" %>
-
-          <% end %>
-
+        <% if current_user.id != 1 %>
+    </br>
+              <%end %>
       <% end %>
 
-  <h5>Dificuldade:</h5>
-    <div class="review-rating" data-score="<%= task.rating %>"></div>
+  <% end %>
+
+    <div class="col-md-12">
+      <div class="hard-style"><h5>Dificuldade:</h5>
+        <div class="review-rating" data-score="<%= task.rating %>"></div>
+      </div>
+
+    <div class="col-md-6 col-md-offset-10">
+      <div class="score-style">
+        <h5>Pontuação:</h5>
+        <%= task.score %> pontos
+        <br>
+      </div>
+    </div>
+  </div>
+  <p></p>
+</br>
 </div>

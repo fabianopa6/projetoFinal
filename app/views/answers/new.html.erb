@@ -1,0 +1,19 @@
+
+<div>
+  <%= render partial: "layouts/headerInsideTasks" %>
+</div>
+
+
+<div class="subjects-details">
+  <h2 class="titulos">Escreva um algoritmo que faça a soma de 1 a 10:</h2>
+
+  <% code = 1 %>
+  <% if code == 0 %>
+      <%= render 'form' %>
+  <% end %>
+
+  <% if code == 1 %>
+      <%= render 'formCode' %>
+  <% end %>
+
+</div>

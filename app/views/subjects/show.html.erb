@@ -8,14 +8,20 @@
     <h4><b>Professor: </b><%= @subject.professor%></h4>
     <h4><%= @subject.semester.semester%></h4>
 
-  <div class="row">
-      <div class="container">
 
-      <%= render @subject.tasks.order("created_at DESC")%>
 
-  </div>
 
-  </div>
+        <% if @subject.tasks.count == 0 %>
+            <br>
+            <h4><b>Não há tarefas cadastradas para essa disciplina!</b></h4>
+
+        <% else %>
+
+          <%= render @subject.tasks.order("created_at DESC")%>
+        <% end %>
+
+
+
 
 </br>
 
